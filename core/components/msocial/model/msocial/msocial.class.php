@@ -2,7 +2,7 @@
 /**
 * Класс mSocial для инициализации и подключение классов постинга в соцсети. Текущий набор соцсетей: Tw.
 * @copyright  Copyright (c) 2016 devPastet (Pavel Karelin) devpastet@yandex.ru
-* @version    1.0.0 pre-alpha
+* @version    1.0.1 alpha
 */
 
 set_time_limit(0);

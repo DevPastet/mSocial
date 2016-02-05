@@ -27,10 +27,10 @@ class tw
 		$this->modx = $modx;
 		$this->setting = $setting;
 		
-		$this->twKeys['oauth_access_token'] = $this->modx->getOption('msocial_tt_ot');
-		$this->twKeys['oauth_access_token_secret'] = $this->modx->getOption('msocial_tw_os');
-		$this->twKeys['consumer_key'] = $this->modx->getOption('msocial_tw_ck');
-		$this->twKeys['consumer_secret'] = $this->modx->getOption('msocial_tw_cs');
+		$this->twKeys['oauth_access_token'] = trim($this->modx->getOption('msocial_tt_ot'));
+		$this->twKeys['oauth_access_token_secret'] = trim($this->modx->getOption('msocial_tw_os'));
+		$this->twKeys['consumer_key'] = trim($this->modx->getOption('msocial_tw_ck'));
+		$this->twKeys['consumer_secret'] = trim($this->modx->getOption('msocial_tw_cs'));
 				
 	}
 	
