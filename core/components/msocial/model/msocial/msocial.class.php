@@ -29,6 +29,7 @@ class mSocial
 	/*@var object $modx обьект modx */
 	public function __construct(modX & $modx, $setting) 
 	{
+		require_once MODX_CORE_PATH . 'components/msocial/model/msocial/socials.class.php';
 		$this->modx = $modx;
 		$this->setting = $setting;
 		
@@ -44,9 +45,9 @@ class mSocial
      */
 	public function checkSocialAndDock()
 	{ 
-		if (file_exists(MODX_CORE_PATH . 'components/msocial/custom/network/'.$this->soc.'.class.php')) {
+		if (file_exists(MODX_CORE_PATH . 'components/msocial/custom/network/'.$this->soc.'/'.$this->soc.'.class.php')) {
 			$modx = $this->modx;
-		    if($modx->loadClass($this->soc, MODX_CORE_PATH . 'components/msocial/custom/network/', true, true)){
+		    if($modx->loadClass($this->soc, MODX_CORE_PATH . 'components/msocial/custom/network/'.$this->soc.'/', true, true)){
 		    	$this->getAndParseChunk($this->soc);
 				$initSocial[$this->soc] = new $this->soc($modx, $this->setting);
 				if($this->setting['method'] == 'posting'){
@@ -61,7 +62,7 @@ class mSocial
      */
 	public function getAndParseChunk()
 	{
-		$chunkName = $this->modx->getOption('msocial_'.$this->soc.'_tp');
+		$chunkName = trim($this->modx->getOption('msocial_'.$this->soc.'_tp'));
 		$this->setting['message'] = $this->modx->getChunk($chunkName, $this->setting['allField']);	
 		$this->modx->getParser()->processElementTags('', $this->setting['message'], true, true, '[[', ']]', array(), 10);
 		$this->parseAttach();
@@ -80,6 +81,7 @@ class mSocial
      */
 	public function parseAttach()
 	{
+		$this->setting['attach'] = array();
 	    preg_match_all("/(<img )(.+?)( \/)?(>)/", $this->setting['message'],$images);
 		foreach ($images[2] as $val)
 		{
@@ -89,10 +91,10 @@ class mSocial
 				{
 					$this->setting['attach'][] = $matches[3];
 				}
-			}
-		        
+			}   
 		}
 	}
 	
 }
+
 ?>

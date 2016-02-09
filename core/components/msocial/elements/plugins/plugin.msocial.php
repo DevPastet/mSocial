@@ -28,10 +28,16 @@ if ($modx->loadClass('mSocial', MODX_CORE_PATH . 'components/msocial/model/msoci
                 $setting['allField'][$tvar['name']] = $tvar['value'];
     }
     	
-    // добавляем постинг в tw        	
+    // добавляем твиттер  	
     if($resource->getTVValue('twPost')){ 
         $setting['activeSoc'][] = 'tw';
     }
+    
+    // добавляем вк
+    if($resource->getTVValue('vkPost')){ 
+        $setting['activeSoc'][] = 'vk';
+    }
+        
                 	
     // Определяем метод действий
     $setting['method'] = 'posting';
