@@ -34,7 +34,7 @@ class tw extends socials
 		$requestMethod = 'POST';
 		
 		$postfields = array(
-		    'status' => $this->setting['message']
+		    'status' => substr($this->setting['message'], 0, 140)
 		);
 				
 		if(isset($this->setting['attach']) AND $this->modx->getOption('msocial_im_ps') == 1)
