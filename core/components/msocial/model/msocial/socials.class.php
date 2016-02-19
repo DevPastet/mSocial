@@ -47,7 +47,7 @@ class socials
 		$options = array(
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_HEADER => false, 
-			CURLOPT_FOLLOWLOCATION => true,   
+			CURLOPT_FOLLOWLOCATION => false,   
 			CURLOPT_ENCODING => "",     
 			CURLOPT_USERAGENT => "mSocial",
 			CURLOPT_AUTOREFERER => true,  
