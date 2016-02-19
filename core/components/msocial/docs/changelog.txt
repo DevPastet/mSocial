@@ -1,5 +1,9 @@
 Changelog for mSocial.
 
+1.0.4
+==============
+- fix CURLOPT_FOLLOWLOCATION
+
 1.0.3
 ==============
 - Добавлена обрезка строки до 140 символов для Twitter
