@@ -2,7 +2,6 @@
 /**
 * Плагин mSocial для постинга в соцсети.
 * @copyright  Copyright (c) 2016 devPastet (Pavel Karelin) devpastet@yandex.ru
-* @version    1.0.1 alpha
 */
 
 
@@ -37,7 +36,11 @@ if ($modx->loadClass('mSocial', MODX_CORE_PATH . 'components/msocial/model/msoci
     if($resource->getTVValue('vkPost')){ 
         $setting['activeSoc'][] = 'vk';
     }
-        
+     
+    // добавляем fb
+    if($resource->getTVValue('fbPost')){ 
+        $setting['activeSoc'][] = 'fb';
+    }   
                 	
     // Определяем метод действий
     $setting['method'] = 'posting';

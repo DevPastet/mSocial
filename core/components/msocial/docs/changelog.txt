@@ -1,5 +1,9 @@
 Changelog for mSocial.
 
+1.0.5
+==============
+- Добавление fb модуля.
+
 1.0.4
 ==============
 - fix CURLOPT_FOLLOWLOCATION

@@ -61,7 +61,7 @@ class tw extends socials
 		if(isset($response->errors))
 		{
 			$errorMsg = $response->errors[0]->code.' ('.$response->errors[0]->message.')';
-			$this->modx->log(modX::LOG_LEVEL_ERROR, $this->modx->lexicon('msocial_error_posting').' Twitter '.$errorMsg);
+			$this->modx->log(modX::LOG_LEVEL_ERROR, $this->modx->lexicon('msocial_error_posting').' Twitter #'.$errorMsg);
 		}
 	}
 	

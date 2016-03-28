@@ -21,3 +21,14 @@ $_lang['setting_msocial_vk_at'] = 'The access key (access_token).';
 $_lang['setting_msocial_vk_at_desc'] = 'The access key (access_token), proving your right to manage the account, where and how to get it can be found in the documentation for the extension.';
 $_lang['setting_msocial_im_fg'] = 'On behalf of the group.';
 $_lang['setting_msocial_im_fg_desc'] = 'Changes the option of posting on behalf of the group and on behalf of the user. <b>IMPORTANT</b> works only when placing the posts in the group. If you select <b>no</b> post on behalf of the user. If you select <b>Yes</b> post on behalf of the group.';
+
+//Fb
+$_lang['setting_msocial_fb_tp'] = 'Chunk template for FB.';
+$_lang['setting_msocial_fb_id'] = 'Id user.';
+$_lang['setting_msocial_fb_id_desc'] = 'Supports posting to the page as the user and group. Identifier for the social network facebook.com on the page which will add the message.';
+$_lang['setting_msocial_fb_at'] = 'access key (access_token).';
+$_lang['setting_msocial_fb_at_desc'] = 'The access key (access_token), proving your right to manage the account, where and how to get it can be found in the documentation for the extension.';
+$_lang['setting_msocial_fb_lk'] = 'To insert a link.';
+$_lang['setting_msocial_fb_lk_desc'] = 'Facebook Api does not allow to attach to the post the image list. However, it allows you to place a block with a link and image of this item includes placement of links.';
+$_lang['setting_msocial_fb_fg'] = 'On behalf of the group.';
+$_lang['setting_msocial_fb_fg_desc'] = 'Changes the option of posting on behalf of the group and on behalf of the user. <b>IMPORTANT</b> works only when placing the posts in the group. If you select <b>no</b> post on behalf of the user. If you select <b>Yes</b> post on behalf of the group.';

@@ -7,5 +7,3 @@ Author: Pavel Karelin <devpastet@yandex.ru>
 --------------------
 
 Полная документация здесь http://docs.modx.pro/components/msocial.
-
-Особая благодарность: Льву Вербицкому, Володе и Василию Наумкину.
