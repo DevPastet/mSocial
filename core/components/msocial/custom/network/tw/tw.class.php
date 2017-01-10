@@ -37,7 +37,7 @@ class tw extends socials
 		    'status' => substr($this->setting['message'], 0, 140)
 		);
 				
-		if(!empty($this->setting['attach']) AND $this->modx->getOption('msocial_im_ps') == 1)
+		if(isset($this->setting['attach']) AND $this->modx->getOption('msocial_im_ps') == 1)
 		{
 			$count = 1;
 			foreach($this->setting['attach'] as $file)
