@@ -1,19 +1,19 @@
 <?php
 /**
-* Плагин mSocial для постинга в соцсети.
-* @copyright  Copyright (c) 2016 devPastet (Pavel Karelin) devpastet@yandex.ru
-*/
+ * Плагин mSocial для постинга в соцсети.
+ * @copyright  Copyright (c) 2016 devPastet (Pavel Karelin) devpastet@yandex.ru
+ */
 
 
-if ($modx->loadClass('mSocial', MODX_CORE_PATH . 'components/msocial/model/msocial/', true, true)) 
+if ($modx->loadClass('mSocial', MODX_CORE_PATH . 'components/msocial/model/msocial/', true, true))
 {
     //Получаем лексиконы
     $modx->lexicon->load('msocial:default');
-                    
+
     /* Список полей для постинга */
     $setting['allField'] = $resource->toArray();
-    	
-    	
+
+
     /* Список tv полей для постинга */
     $tv_query = $modx->newQuery('modTemplateVarResource');
     $tv_query->leftJoin('modTemplateVar','modTemplateVar',array("modTemplateVar.id = tmplvarid"));
@@ -24,31 +24,34 @@ if ($modx->loadClass('mSocial', MODX_CORE_PATH . 'components/msocial/model/msoci
     foreach ($tvars as $tvar) {
         $tvar = $tvar->toArray();
         if (!empty($tvar['value']))
-                $setting['allField'][$tvar['name']] = $tvar['value'];
+            $setting['allField'][$tvar['name']] = $tvar['value'];
     }
-    	
+
     // добавляем твиттер  	
-    if($resource->getTVValue('twPost')){ 
+    if($resource->getTVValue('twPost')){
+        $resource->setTVValue('twPost',0);
         $setting['activeSoc'][] = 'tw';
     }
-    
+
     // добавляем вк
-    if($resource->getTVValue('vkPost')){ 
+    if($resource->getTVValue('vkPost')){
+        $resource->setTVValue('vkPost',0);
         $setting['activeSoc'][] = 'vk';
     }
-     
+
     // добавляем fb
-    if($resource->getTVValue('fbPost')){ 
+    if($resource->getTVValue('fbPost')){
+        $resource->setTVValue('fbPost',0);
         $setting['activeSoc'][] = 'fb';
-    }   
-                	
+    }
+
     // Определяем метод действий
     $setting['method'] = 'posting';
-    	
+
     if(count($setting['activeSoc']) > 0){
-    	$mSocial = new mSocial($modx, $setting);
+        $mSocial = new mSocial($modx, $setting);
     }
-                  
+
 }else{
     $modx->log(modX::LOG_LEVEL_ERROR, "Не удалось подключить класс mSocial в ".MODX_CORE_PATH."/components/msocial/model/");
     return false;

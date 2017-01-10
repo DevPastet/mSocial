@@ -34,10 +34,10 @@ class tw extends socials
 		$requestMethod = 'POST';
 		
 		$postfields = array(
-		    'status' => substr($this->setting['message'], 0, 140)
+		    'status' => mb_substr($this->setting['message'], 0, 140)
 		);
 				
-		if(isset($this->setting['attach']) AND $this->modx->getOption('msocial_im_ps') == 1)
+		if(!empty($this->setting['attach']) AND $this->modx->getOption('msocial_im_ps') == 1)
 		{
 			$count = 1;
 			foreach($this->setting['attach'] as $file)
@@ -49,7 +49,7 @@ class tw extends socials
 				}
 				$count++;
 			}
-			$postfields['media_ids'] = substr($mediaStr, 0, -1);
+			$postfields['media_ids'] = mb_substr($mediaStr, 0, -1);
 		}
 		
 		
