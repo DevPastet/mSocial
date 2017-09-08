@@ -65,6 +65,7 @@ class mSocial
 		$chunkName = trim($this->modx->getOption('msocial_'.$this->soc.'_tp'));
 		$this->setting['message'] = $this->modx->getChunk($chunkName, $this->setting['allField']);	
 		$this->modx->getParser()->processElementTags('', $this->setting['message'], true, true, '[[', ']]', array(), 10);
+		$this->setting['message'] = html_entity_decode($this->setting['message']);
 		$this->parseAttach();
 		$this->clearMess();
 	}
