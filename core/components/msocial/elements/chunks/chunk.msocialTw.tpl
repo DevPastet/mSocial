@@ -1,1 +1,1 @@
-[[+pagetitle]][[+content]]
+[[+content]]
