@@ -1,5 +1,9 @@
 Changelog for mSocial.
 
+1.0.8
+==============
+- Добавление html_entity_decode для замены тегов генерируемых редакторами MODX REVO.
+
 1.0.7
 ==============
 - Заменена substr() на mb_substr().
